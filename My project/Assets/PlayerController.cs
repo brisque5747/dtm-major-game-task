@@ -27,4 +27,22 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "ObstacleTag")
+        {
+            Debug.Log("destroy");
+            Destroy(gameObject);
+
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "ObstacleTag")
+        {
+            Debug.Log("destroy v2");
+            Destroy(gameObject);
+        }
+    }
 }
