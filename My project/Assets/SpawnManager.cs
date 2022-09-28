@@ -19,7 +19,9 @@ public class SpawnManager : MonoBehaviour
     {
 
     }
-
+    /// <summary>
+    /// This spawns obstacles through an array in different places
+    /// </summary>
     void SpawnObstacles()
     {
         Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);

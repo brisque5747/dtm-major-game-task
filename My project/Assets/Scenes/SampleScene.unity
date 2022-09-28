@@ -189,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d056eca930cd94d4298785ae04c4761e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 17.03
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d056eca930cd94d4298785ae04c4761e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -648,6 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timevalue: 15
+  YouWinText: {fileID: 2032845761}
 --- !u!4 &1177616150
 Transform:
   m_ObjectHideFlags: 0
@@ -808,12 +809,12 @@ GameObject:
   - component: {fileID: 2032845764}
   - component: {fileID: 2032845763}
   m_Layer: 5
-  m_Name: Game Over Text
+  m_Name: Game Won Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2032845762
 RectTransform:
   m_ObjectHideFlags: 0
