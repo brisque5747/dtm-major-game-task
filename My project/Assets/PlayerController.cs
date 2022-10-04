@@ -5,44 +5,27 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    public Camera cam;
-    public NavMeshAgent agent;
+    public float speed = 3.0f;
+    private float turnSpeed = 60.0f;
+    private float horizontalInput;
+    private float forwardInput;
+    public GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (speed> 0)
+        {
+            gameManager.timeRunning = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                agent.SetDestination(hit.point);
-            }
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "ObstacleTag")
-        {
-            Debug.Log("destroy");
-            Destroy(gameObject);
-
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "ObstacleTag")
-        {
-            Debug.Log("destroy v2");
-            Destroy(gameObject);
-        }
+        horizontalInput = Input.GetAxis("Horizontal");
+        forwardInput = Input.GetAxis("Vertical");
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+        transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
     }
 }

@@ -7,10 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public float timevalue = 15;
     public GameObject YouWinText;
+    public bool timeRunning;
     // Start is called before the first frame update
     void Start()
     {
-        
+        timeRunning = true;
     }
 
     // Update is called once per frame
@@ -24,10 +25,14 @@ public class GameManager : MonoBehaviour
     void Timer()
     {
         timevalue -= Time.deltaTime;
-        if (timevalue <= 0)
+        if (timeRunning)
         {
-            YouWin();
+            if (timevalue <= 0)
+            {
+                YouWin();
+            }
         }
+        
     }
     /// <summary>
     /// Triggers a message within the debug log stating that player won. Still WIP
