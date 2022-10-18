@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstacleController : MonoBehaviour
 {
-    public GameObject YouLoseText;
+    public GameObject youLoseText;
     public PlayerController playerController;
     public GameManager gameManager;
     // Start is called before the first frame update
@@ -24,5 +24,7 @@ public class ObstacleController : MonoBehaviour
         
         Destroy(gameObject);
         gameManager.timeRunning = false;
+        youLoseText.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
