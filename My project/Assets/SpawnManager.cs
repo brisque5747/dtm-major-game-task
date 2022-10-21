@@ -6,12 +6,12 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject obstaclePrefab;
     public GameObject powerupPrefab;
-    private float spawnRangeX = 10;
+    private float spawnRangeX = 5;
     private float spawnPosZ = 20;
     private float startDelay = 2;
     private float spawnInterval = 1.5f;
     private float spawnIntervalObstacles = 2.5f;
-    private float spawnRangeY = 10;
+    private float spawnRangeY = 5;
     // Start is called before the first frame update
     void Start()
     {
